@@ -15,7 +15,6 @@ public class FieraDelFumetto {
         // TODO code application logic here
       
         System.out.println("CIAO");
-       System.out.println("Jamm bell");
 
     }          
 }
