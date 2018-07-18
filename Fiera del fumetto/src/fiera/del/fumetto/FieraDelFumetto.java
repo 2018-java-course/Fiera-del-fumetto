@@ -8,6 +8,7 @@ package fiera.del.fumetto;
 import calendar.api.CalendarEvent;
 import calendar.api.CalendarEventException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 
 public class FieraDelFumetto implements CalendarEvent {
