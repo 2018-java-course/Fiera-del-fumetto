@@ -5,10 +5,7 @@
  */
 package fiera.del.fumetto;
 
-/**
- *
- * @author PC22
- */
+
 public class FieraDelFumetto {
 
     /**
@@ -16,6 +13,9 @@ public class FieraDelFumetto {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+      
+        System.out.println("CIAO");
+
         //Test
     }
     
