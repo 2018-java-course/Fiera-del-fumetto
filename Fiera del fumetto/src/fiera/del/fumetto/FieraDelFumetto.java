@@ -17,7 +17,6 @@ public class FieraDelFumetto {
         System.out.println("CIAO");
 
         //Test
-        //test
     }
     
 }
