@@ -6,9 +6,8 @@
 package FieraDelFumetto;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
+import FieraDelFumetto.Fiera.CustomComparator;
 
 /**
  *
@@ -27,18 +26,27 @@ public class MainClass {
         Fiera myFiera3 = new Fiera("Lucca Comics and Games", "Lucca - Centro Storico");
         Fiera myFiera4 = new Fiera("Romics", "Roma - Fiera di Roma");
         Fiera myFiera5 = new Fiera("FantaExpo", "Salerno");
-        ArrayList<Fiera> Fiere = new ArrayList<>();
+        ArrayList<Fiera> fiere = new ArrayList<>();
+        
+        
 
-        Fiere.add(0, myFiera);
-        Fiere.add(1, myFiera2);
-        Fiere.add(2, myFiera3);
-        Fiere.add(3, myFiera4);
-        Fiere.add(4, myFiera5);
+        fiere.add(0, myFiera);
+        fiere.add(1, myFiera2);
+        fiere.add(2, myFiera3);
+        fiere.add(3, myFiera4);
+        fiere.add(4, myFiera5);
        
-        for (Fiera fiera : Fiere) {
+        for (Fiera fiera : fiere) {
             System.out.println(fiera);
         }
-    
         
+         
+        Collections.sort(fiere, new CustomComparator());
+        
+        System.out.println("ArrayList Ordinata FINALMENTE!!!!!!!! ");
+        for (Fiera fiera : fiere) {
+            System.out.println(fiera);
+        }
+
     }
 }

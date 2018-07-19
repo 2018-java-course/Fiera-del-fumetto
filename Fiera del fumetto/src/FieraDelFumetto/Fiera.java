@@ -3,12 +3,25 @@ package FieraDelFumetto;
 import calendar.api.CalendarEvent;
 import calendar.api.CalendarEventException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.Scanner;
 
-public class Fiera implements Comparator<Fiera>, CalendarEvent {
+public class Fiera implements CalendarEvent {
+
+    public String getNomeEvento() {
+        return nomeEvento;
+    }
+
+    public void setNomeEvento(String nomeEvento) {
+        this.nomeEvento = nomeEvento;
+    }
+
+    public String getLuogoEvento() {
+        return luogoEvento;
+    }
+
+    public void setLuogoEvento(String luogoEvento) {
+        this.luogoEvento = luogoEvento;
+    }
 
     private String nomeEvento;
     private String luogoEvento;
@@ -33,13 +46,6 @@ public class Fiera implements Comparator<Fiera>, CalendarEvent {
             ", Luogo Fiera='" + luogoEvento + '\'' +
             '}'; 
     }
-        @Override
-        public int compare(Fiera o1, Fiera o2)
-        {
-
-            return  o1.nomeEvento.compareTo(o2.nomeEvento);
-        }
-
     @Override
     public String getTitle() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -64,4 +70,22 @@ public class Fiera implements Comparator<Fiera>, CalendarEvent {
     public String getLocation() throws CalendarEventException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    /*@Override
+    public int compare(Fiera o1, Fiera o2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
+    
+    public static class CustomComparator implements Comparator<Fiera>{
+        
+        @Override
+        public int compare(Fiera o1, Fiera o2) {
+            return o1.getNomeEvento().compareTo(o2.getNomeEvento()); //To change body of generated methods, choose Tools | Templates.
+        }
+        
+    }
+    
+    
 }
+
+
