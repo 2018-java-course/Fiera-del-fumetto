@@ -25,6 +25,8 @@ public class Fiera implements CalendarEvent {
 
     private String nomeEvento;
     private String luogoEvento;
+    private LocalDate startDate;
+    private String description;
     private int numPersone;
 
     /*public Fiera inserimento(String nomeEvento, String luogoEvento){
@@ -32,11 +34,50 @@ public class Fiera implements CalendarEvent {
          return myFiera;
     }*/
 
-    public Fiera(String nomeEvento, String luogoEvento)
+    /*public Fiera(String nomeEvento, String luogoEvento)
     {
         this.nomeEvento = nomeEvento;
         this.luogoEvento = luogoEvento;
+    }*/
+    
+    
+    private Fiera(){
+    
     }
+    
+    public static class Builder{
+        private Fiera fiera;
+        
+        public Builder() {
+            this.fiera = new Fiera();
+        }
+        
+        public Builder setNomeEvento(String nomeEvento){
+            this.fiera.nomeEvento = nomeEvento;
+            return this;
+        }
+        
+        public Builder setLuogoEvento(String luogoEvento){
+            this.fiera.luogoEvento = luogoEvento;
+            return this;
+        }
+        
+        public Builder setDataEvento(LocalDate startDate){
+            this.fiera.startDate = startDate;
+            return this;
+        }
+        
+        public Builder setDescription(String description){
+            this.fiera.description = description;
+            return this;
+        }
+        
+        public Fiera build(){
+            return this.fiera;
+        }
+    
+    }
+    
     
     
     @Override
@@ -44,8 +85,13 @@ public class Fiera implements CalendarEvent {
        return "Fiera Fumetto{" +
             "Nome Fiera=" + nomeEvento +
             ", Luogo Fiera='" + luogoEvento + '\'' +
+            ", Descrizione='" + description + '\'' +
+            ", Data='" + startDate + 
             '}'; 
     }
+    
+    
+    
     @Override
     public String getTitle() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -68,6 +114,11 @@ public class Fiera implements CalendarEvent {
 
     @Override
     public String getLocation() throws CalendarEventException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getDescription() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

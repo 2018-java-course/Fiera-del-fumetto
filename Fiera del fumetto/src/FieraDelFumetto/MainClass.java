@@ -8,6 +8,8 @@ package FieraDelFumetto;
 import java.util.ArrayList;
 import java.util.Collections;
 import FieraDelFumetto.Fiera.CustomComparator;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
@@ -22,6 +24,7 @@ public class MainClass {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         // TODO code application logic here
 
         /*Fiera myFiera = new Fiera("Comicon", "Napoli - Mostra d'Oltremare");
@@ -41,9 +44,18 @@ public class MainClass {
             String nomeEvento = str;
             Scanner sc2 = new Scanner(System.in);
             String luogoEvento = sc2.nextLine();
-            System.out.println(nomeEvento + luogoEvento);
-            Fiera myFiera = new Fiera(nomeEvento, luogoEvento);
-            fiere.add(j, myFiera);
+            Scanner sc3 = new Scanner(System.in);
+            String description = sc3.nextLine();
+            Scanner sc4 = new Scanner(System.in);
+            String date = sc4.nextLine();
+            LocalDate startDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            System.out.println(nomeEvento + luogoEvento + description + startDate);
+            Fiera.Builder fiera = new Fiera.Builder();
+            fiera.setNomeEvento(nomeEvento);
+            fiera.setLuogoEvento(luogoEvento);
+            fiera.setDescription(description);
+            fiera.setDataEvento(startDate);
+            fiere.add(fiera.build());
         }
 
             /*fiere.add(0, myFiera);
