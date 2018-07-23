@@ -3,6 +3,7 @@ package FieraDelFumetto;
 import calendar.api.CalendarEvent;
 import calendar.api.CalendarEventException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 
 public class Fiera implements CalendarEvent {
@@ -27,7 +28,7 @@ public class Fiera implements CalendarEvent {
     private String luogoEvento;
     private LocalDate startDate;
     private String description;
-    private int numPersone;
+    private int numPersone; 
 
     /*public Fiera inserimento(String nomeEvento, String luogoEvento){
          Fiera myFiera = new Fiera(nomeEvento, luogoEvento);
@@ -86,7 +87,7 @@ public class Fiera implements CalendarEvent {
             "Nome Fiera=" + nomeEvento +
             ", Luogo Fiera='" + luogoEvento + '\'' +
             ", Descrizione='" + description + '\'' +
-            ", Data='" + startDate + 
+            ", Data='" + startDate.format((DateTimeFormatter.ofPattern("dd/MM/yyyy"))) + 
             '}'; 
     }
     
@@ -94,12 +95,12 @@ public class Fiera implements CalendarEvent {
     
     @Override
     public String getTitle() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return nomeEvento;
     }
 
     @Override
     public LocalDate getStartDate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return startDate;
     }
 
     @Override
@@ -114,12 +115,12 @@ public class Fiera implements CalendarEvent {
 
     @Override
     public String getLocation() throws CalendarEventException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return luogoEvento;
     }
 
     @Override
     public String getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return description;
     }
 
     /*@Override
