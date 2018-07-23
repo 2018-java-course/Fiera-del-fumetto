@@ -25,6 +25,24 @@ public class FiereMangement implements calendar.api.CalendarEventDatabase {
                 .setDataEvento(LocalDate.parse("12/12/2012", DateTimeFormatter.ofPattern("dd/MM/yyyy")))
                 .setDescription("Una grandissima fiera del fumetto")
                 .build());
+        fiere.add(new Fiera.Builder()
+                .setNomeEvento("Comicon")
+                .setLuogoEvento("Napoli - Mostra d'Oltremare")
+                .setDataEvento(LocalDate.parse("12/12/2019", DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                .setDescription("La fiera del fumetto di Napoli")
+                .build());
+        fiere.add(new Fiera.Builder()
+                .setNomeEvento("Romics")
+                .setLuogoEvento("Roma - Roma Fiera")
+                .setDataEvento(LocalDate.parse("12/12/2018", DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                .setDescription("La fiera di Roma, terza in Italia")
+                .build());
+        fiere.add(new Fiera.Builder()
+                .setNomeEvento("Lucca Comics and Games")
+                .setLuogoEvento("Lucca - Centro Storico")
+                .setDataEvento(LocalDate.parse("07/11/2018", DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                .setDescription("Fiera del fumetto nel centro storico di Lucca, prima in Italia")
+                .build());
     }
     
     
