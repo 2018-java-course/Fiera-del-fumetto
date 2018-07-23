@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -9,16 +9,26 @@ import calendar.api.CalendarEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
  *
  * @author PC20
  */
-public class FiereMangement implements calendar.api.CalendarEventDatabase{
+public class FiereMangement implements calendar.api.CalendarEventDatabase {
 
-    @Override
-    public void populate(ArrayList<CalendarEvent> fiere) {
+    public void populate(ArrayList<CalendarEvent> fiere){
+        fiere.add(new Fiera.Builder()
+                .setNomeEvento("Anastasia-Comix")
+                .setLuogoEvento("Sant'Anastasia - Piazza Catteneo")
+                .setDataEvento(LocalDate.parse("12/12/2012", DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                .setDescription("Una grandissima fiera del fumetto")
+                .build());
+    }
+    
+    
+    public void populateManually(ArrayList<CalendarEvent> fiere) {
         System.out.println("Dimmi quante fiere del fumetto vuoi inserire (^--^)/ \n");
         int size = fiere.size();
         Scanner sc = new Scanner(System.in);
@@ -48,5 +58,4 @@ public class FiereMangement implements calendar.api.CalendarEventDatabase{
             fiere.add(fiera.build());
         }
     }
-    
 }

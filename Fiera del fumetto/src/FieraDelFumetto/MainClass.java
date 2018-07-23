@@ -74,13 +74,13 @@ public class MainClass {
         manager.populate(array);
         stampaFiere(fiere);
 
-        Collections.sort(fiere, new CustomComparator());
+        //Collections.sort(fiere, new CustomComparator());
 
-        System.out.println("ArrayList Ordinata FINALMENTE!!!!!!!! ");
+        //System.out.println("ArrayList Ordinata FINALMENTE!!!!!!!! ");
         /*for (Fiera fiera : fiere) {
             System.out.println(fiera);
         }*/
-        stampaFiere(fiere);
+        //stampaFiere(fiere);
         stampaCalendar(array);
 
     }
